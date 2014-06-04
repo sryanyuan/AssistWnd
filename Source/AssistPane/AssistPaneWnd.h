@@ -54,6 +54,9 @@ public:
 private:
 	void ProcessTabChange(DuiLib::TNotifyUI& msg);
 
+	void ProcessPageOK(DuiLib::TNotifyUI& msg);
+	void ApplyItemVisible();
+
 protected:
 	HWND m_hParentHWND;
 

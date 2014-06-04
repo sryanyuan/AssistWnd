@@ -2,8 +2,11 @@
 #include "../duictrlex/tinyxml/tinyxml.h"
 #include <Shlwapi.h>
 #include <direct.h>
+#include <sstream>
 //////////////////////////////////////////////////////////////////////////
 using namespace DuiLib;
+using std::string;
+using std::stringstream;
 //////////////////////////////////////////////////////////////////////////
 static const int s_nMaxTabButtons = 5;
 //////////////////////////////////////////////////////////////////////////
@@ -90,6 +93,55 @@ void AssistPaneWnd::Notify(DuiLib::TNotifyUI& msg)
 		{
 			ProcessTabChange(msg);
 		}
+		else if(msg.pSender->GetName().Left(13) == "button_tabok_")
+		{
+			ProcessPageOK(msg);
+		}
+	}
+}
+
+void AssistPaneWnd::ProcessPageOK(DuiLib::TNotifyUI& msg)
+{
+	int nPage = -1;
+	if(1 != sscanf(msg.pSender->GetName(), "button_tabok_%d", &nPage))
+	{
+		return;
+	}
+
+	if(-1 == nPage)
+	{
+		return;
+	}
+
+	switch(nPage)
+	{
+		//	item visible
+	case 0:
+		{
+			ApplyItemVisible();
+		}break;
+	}
+}
+
+void AssistPaneWnd::ApplyItemVisible()
+{
+	CRichEditUI* pEdit = (CRichEditUI*)m_PaintManager.FindControl("richedit_itemvisible")->GetInterface(DUI_CTR_RICHEDIT);
+	if(NULL == pEdit)
+	{
+		return;
+	}
+
+	m_xItemVisibleSet.clear();
+
+	CDuiString xEditContent = pEdit->GetText();
+
+	string xContent = xEditContent;
+	int nLines = std::count(xContent.begin(), xContent.end(), '\n');
+
+	if(nLines > 0)
+	{
+		char** pSplitStr = new char*[nLines];
+		ZeroMemory(pSplitStr, sizeof(char*) * nLines);
 	}
 }
 
