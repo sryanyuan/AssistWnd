@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Window mininfo="450,600" size="450,600" caption="0,0,0,36" >
+<Window mininfo="450,500" size="450,500" caption="0,0,0,36" >
 	<!--Font name="幼圆" size="12" default="true" /-->
 	<Font name="宋体" size="12" bold="false" default="true" />
 	<Font name="微软雅黑" size="14" bold="true" default="false" />
@@ -34,20 +34,41 @@
 										<Button name="button_tableft" width="8" normalimage="file='AssistPane/arrow_left.png' source='0,0,8,13' dest='0,6,8,18'" hotimage="file='AssistPane/arrow_left.png' source='0,13,8,26' dest='0,6,8,18'" pushedimage="file='AssistPane/arrow_left.png' source='0,26,8,39' dest='0,6,8,18'" />
 										<Label width="5" />
 										<HorizontalLayout name="layout_tabbuttons">
-											<Option name="button_itemvisible" group="group_tabsel" selected="true" font="3" width="80" height="24" text="物品过滤" normalimage="file='AssistPane/button.png' source='0,0,177,52' corner='8,8,8,8'" hotimage="file='AssistPane/button.png' source='0,52,177,104' corner='8,8,8,8'" pushedimage="file='AssistPane/button.png' source='0,104,177,156' corner='8,8,8,8'" selectedimage="file='AssistPane/button.png' source='0,104,177,156' corner='8,8,8,8'" />
-											<Label width="4" />
-											<Option name="button_keymap" group="group_tabsel" selected="false" font="3" width="80" height="24" text="按键映射" normalimage="file='AssistPane/button.png' source='0,0,177,52' corner='8,8,8,8'" hotimage="file='AssistPane/button.png' source='0,52,177,104' corner='8,8,8,8'" pushedimage="file='AssistPane/button.png' source='0,104,177,156' corner='8,8,8,8'" selectedimage="file='AssistPane/button.png' source='0,104,177,156' corner='8,8,8,8'" />
+											<Option name="option_tab_0" group="group_tabsel" selected="true" font="3" width="80" height="24" text="物品过滤" normalimage="file='AssistPane/button.png' source='0,0,177,52' corner='8,8,8,8'" hotimage="file='AssistPane/button.png' source='0,52,177,104' corner='8,8,8,8'" pushedimage="file='AssistPane/button.png' source='0,104,177,156' corner='8,8,8,8'" selectedimage="file='AssistPane/button.png' source='0,104,177,156' corner='8,8,8,8'" />
+											<!--Label width="2" /-->
+											<Option name="option_tab_1" group="group_tabsel" selected="false" font="3" width="80" height="24" text="按键映射" normalimage="file='AssistPane/button.png' source='0,0,177,52' corner='8,8,8,8'" hotimage="file='AssistPane/button.png' source='0,52,177,104' corner='8,8,8,8'" pushedimage="file='AssistPane/button.png' source='0,104,177,156' corner='8,8,8,8'" selectedimage="file='AssistPane/button.png' source='0,104,177,156' corner='8,8,8,8'" />
+											<!--Label width="2" /-->
 											<Label />
 										</HorizontalLayout>
 										<Label width="5" />
-										<Button name="button_tableft" width="8" normalimage="file='AssistPane/arrow_right.png' source='0,0,8,13' dest='0,6,8,18'" hotimage="file='AssistPane/arrow_right.png' source='0,13,8,26' dest='0,6,8,18'" pushedimage="file='AssistPane/arrow_right.png' source='0,26,8,39' dest='0,6,8,18'" />
+										<Button name="button_tabright" width="8" normalimage="file='AssistPane/arrow_right.png' source='0,0,8,13' dest='0,6,8,18'" hotimage="file='AssistPane/arrow_right.png' source='0,13,8,26' dest='0,6,8,18'" pushedimage="file='AssistPane/arrow_right.png' source='0,26,8,39' dest='0,6,8,18'" />
 									</HorizontalLayout>
 									
 									<Control height="10" />
+									
+									<Label height="2" bkcolor="0xffa5aab1" />
+									
 									<!--内容页面-->
-									<VerticalLayout>
-										<Label text="111" />
-									</VerticalLayout>
+									<TabLayout name="layout_content">
+										<!--物品过滤-->
+										<VerticalLayout>
+											<Label text="请输入想要过滤的物品名称，回车键分隔:" font="3" />
+											<Control height="5" />
+											<RichEdit name="richedit_itemvisible" bkimage="file='AssistPane/edit_bk.png' corner='2,2,2,2'" inset="6,6,6,6" multiline="true" vscrollbar="true" />
+											<Control height="5" />
+											
+											<HorizontalLayout height="30">
+												<Label />
+												<Button name="button_tabok_0" font="3" width="120" text="应用设置" normalimage="file='AssistPane/button.png' source='0,0,177,52' corner='8,8,8,8'" hotimage="file='AssistPane/button.png' source='0,52,177,104' corner='8,8,8,8'" pushedimage="file='AssistPane/button.png' source='0,104,177,156' corner='8,8,8,8'" selectedimage="file='AssistPane/button.png' source='0,104,177,156' corner='8,8,8,8'" />
+												<Label />
+											</HorizontalLayout>
+										</VerticalLayout>
+										
+										<!--按键映射-->
+										<VerticalLayout bkcolor="0xff00ff00">
+										</VerticalLayout>
+										
+									</TabLayout>
 									
 								<Label height="5" />
 							</VerticalLayout>

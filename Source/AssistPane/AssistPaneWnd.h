@@ -51,6 +51,9 @@ public:
 	void LoadConfigFromLocal();
 	void WriteConfigToLocal();
 
+private:
+	void ProcessTabChange(DuiLib::TNotifyUI& msg);
+
 protected:
 	HWND m_hParentHWND;
 
@@ -63,6 +66,9 @@ protected:
 
 	//	for key map
 	KintVintMap m_xKeyMap;
+
+	//	controls
+	DuiLib::CTabLayoutUI* m_pTabLayout;
 };
 //////////////////////////////////////////////////////////////////////////
 #endif
