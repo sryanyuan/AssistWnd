@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window mininfo="450,600" size="450,600" caption="0,0,0,36" >
+	<!--Font name="幼圆" size="12" default="true" /-->
+	<Font name="宋体" size="12" bold="false" default="true" />
+	<Font name="微软雅黑" size="14" bold="true" default="false" />
+	<Font name="宋体" size="14" bold="false" default="false" />
+	<Font name="微软雅黑" size="12" bold="false" default="false" />
+
+	<!--这一层是用来设置背景的-->
+	<HorizontalLayout name="bg" bkcolor="0xFF1e90ff" hole="true" >
+		<!--这一层是用来设置边框的-->
+		<VerticalLayout bkimage="file='AssistPane/border.png' corner='2,2,2,2'" hole="true">
+			<!--游戏内容页面-->
+			<HorizontalLayout>
+					<Label width="3" />
+					
+					<VerticalLayout>
+						<Label height="3" />
+						
+						<!--标题栏-->
+						<HorizontalLayout height="34">
+							<Label name="label_caption" text="BackMIR辅助面板" textcolor="0xffffffff" font="1" float="true" pos="15,10,200,25" />
+							<Label />
+							<!--Button name="closebtn" width="41" height="35" normalimage="file='bindtipdlg/btn_msgdlgClose.png' source='0,0,41,35'" hotimage="file='bindtipdlg/btn_msgdlgClose.png' source='0,35,41,70'" pushedimage="file='bindtipdlg/btn_msgdlgClose.png' source='0,70,41,105'" /-->
+						</HorizontalLayout>
+						
+						<HorizontalLayout bkcolor="0xffe9f0f4" >
+							<Label width="5" />
+							
+							<VerticalLayout>
+								<Label height="5" />
+									<!--Tab面板-->
+									<HorizontalLayout height="24">
+										<Button name="button_tableft" width="8" normalimage="file='AssistPane/arrow_left.png' source='0,0,8,13' dest='0,6,8,18'" hotimage="file='AssistPane/arrow_left.png' source='0,13,8,26' dest='0,6,8,18'" pushedimage="file='AssistPane/arrow_left.png' source='0,26,8,39' dest='0,6,8,18'" />
+										<Label width="5" />
+										<HorizontalLayout name="layout_tabbuttons">
+											<Option name="button_itemvisible" group="group_tabsel" selected="true" font="3" width="80" height="24" text="物品过滤" normalimage="file='AssistPane/button.png' source='0,0,177,52' corner='8,8,8,8'" hotimage="file='AssistPane/button.png' source='0,52,177,104' corner='8,8,8,8'" pushedimage="file='AssistPane/button.png' source='0,104,177,156' corner='8,8,8,8'" selectedimage="file='AssistPane/button.png' source='0,104,177,156' corner='8,8,8,8'" />
+											<Label width="4" />
+											<Option name="button_keymap" group="group_tabsel" selected="false" font="3" width="80" height="24" text="按键映射" normalimage="file='AssistPane/button.png' source='0,0,177,52' corner='8,8,8,8'" hotimage="file='AssistPane/button.png' source='0,52,177,104' corner='8,8,8,8'" pushedimage="file='AssistPane/button.png' source='0,104,177,156' corner='8,8,8,8'" selectedimage="file='AssistPane/button.png' source='0,104,177,156' corner='8,8,8,8'" />
+											<Label />
+										</HorizontalLayout>
+										<Label width="5" />
+										<Button name="button_tableft" width="8" normalimage="file='AssistPane/arrow_right.png' source='0,0,8,13' dest='0,6,8,18'" hotimage="file='AssistPane/arrow_right.png' source='0,13,8,26' dest='0,6,8,18'" pushedimage="file='AssistPane/arrow_right.png' source='0,26,8,39' dest='0,6,8,18'" />
+									</HorizontalLayout>
+									
+									<Control height="10" />
+									<!--内容页面-->
+									<VerticalLayout>
+										<Label text="111" />
+									</VerticalLayout>
+									
+								<Label height="5" />
+							</VerticalLayout>
+							
+							<Label width="5" />
+						</HorizontalLayout>
+						
+						<Label height="3" />
+					</VerticalLayout>
+					
+					<Label width="3" />
+			</HorizontalLayout>
+		</VerticalLayout>
+	</HorizontalLayout>
+</Window>
