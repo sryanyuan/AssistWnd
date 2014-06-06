@@ -5,6 +5,7 @@
 #include <set>
 #include <string>
 #include <map>
+#include <list>
 //////////////////////////////////////////////////////////////////////////
 typedef std::set<string> StringSet;
 typedef std::map<int, int> KintVintMap;
@@ -56,6 +57,7 @@ private:
 
 	void ProcessPageOK(DuiLib::TNotifyUI& msg);
 	void ApplyItemVisible();
+	void ApplyKeyMap();
 
 protected:
 	HWND m_hParentHWND;
@@ -73,5 +75,35 @@ protected:
 	//	controls
 	DuiLib::CTabLayoutUI* m_pTabLayout;
 };
+
+//////////////////////////////////////////////////////////////////////////
+template<typename StringArray>
+void	StringSplit(const std::string& src,	const std::string tok, StringArray&	arr, bool bIgnoreEmptyItem	= true)
+{
+	if(	src.empty()	)
+	{
+		return;
+	}
+	if(	tok.empty()	)
+	{
+		arr.push_back(src);
+		return;
+	}
+
+	std::string::size_type pre_index = 0, index	= 0, len = 0;
+	while( (index =	src.find_first_of(tok, pre_index)) != std::string::npos	)
+	{
+		len = index - pre_index;
+		if( !bIgnoreEmptyItem || len != 0 )
+		{
+			arr.push_back(src.substr(pre_index,	len));
+		}
+		pre_index =	index +	1;
+	}
+
+	arr.push_back(src.substr(pre_index));
+}
+
+int TranslateKey(int _nKey);
 //////////////////////////////////////////////////////////////////////////
 #endif

@@ -38,6 +38,7 @@
 											<!--Label width="2" /-->
 											<Option name="option_tab_1" group="group_tabsel" selected="false" font="3" width="80" height="24" text="按键映射" normalimage="file='AssistPane/button.png' source='0,0,177,52' corner='8,8,8,8'" hotimage="file='AssistPane/button.png' source='0,52,177,104' corner='8,8,8,8'" pushedimage="file='AssistPane/button.png' source='0,104,177,156' corner='8,8,8,8'" selectedimage="file='AssistPane/button.png' source='0,104,177,156' corner='8,8,8,8'" />
 											<!--Label width="2" /-->
+											<!--Option name="option_tab_2" group="group_tabsel" selected="false" font="3" width="80" height="24" text="人物状态" normalimage="file='AssistPane/button.png' source='0,0,177,52' corner='8,8,8,8'" hotimage="file='AssistPane/button.png' source='0,52,177,104' corner='8,8,8,8'" pushedimage="file='AssistPane/button.png' source='0,104,177,156' corner='8,8,8,8'" selectedimage="file='AssistPane/button.png' source='0,104,177,156' corner='8,8,8,8'" /-->
 											<Label />
 										</HorizontalLayout>
 										<Label width="5" />
@@ -65,8 +66,165 @@
 										</VerticalLayout>
 										
 										<!--按键映射-->
-										<VerticalLayout bkcolor="0xff00ff00">
+										<VerticalLayout vscrollbar="true" >
+											<Label text="将游戏内特定按键映射成自定义按键" font="3" />
+											<Control height="5" />
+											
+											<!--F1 map-->
+											<HorizontalLayout height="20" >
+												<Label text="将[F1]映射为" font="3" />
+												<Label width="5" />
+												<Edit name="edit_f1map" maxchar="1" />
+												<Label />
+											</HorizontalLayout>
+											
+											<Control height="8" />
+											
+											<!--F2 map-->
+											<HorizontalLayout height="20" >
+												<Label text="将[F2]映射为" font="3" />
+												<Label width="5" />
+												<Edit name="edit_f2map" maxchar="1" />
+												<Label />
+											</HorizontalLayout>
+											
+											<Control height="8" />
+											
+											<!--F3 map-->
+											<HorizontalLayout height="20" >
+												<Label text="将[F3]映射为" font="3" />
+												<Label width="5" />
+												<Edit name="edit_f3map" maxchar="1" />
+												<Label />
+											</HorizontalLayout>
+											
+											<Control height="8" />
+											
+											<!--F4 map-->
+											<HorizontalLayout height="20" >
+												<Label text="将[F4]映射为" font="3" />
+												<Label width="5" />
+												<Edit name="edit_f4map" maxchar="1" />
+												<Label />
+											</HorizontalLayout>
+											
+											<Control height="8" />
+											
+											<!--F5 map-->
+											<HorizontalLayout height="20" >
+												<Label text="将[F5]映射为" font="3" />
+												<Label width="5" />
+												<Edit name="edit_f5map" maxchar="1" />
+												<Label />
+											</HorizontalLayout>
+											
+											<Control height="8" />
+											
+											<!--F6 map-->
+											<HorizontalLayout height="20" >
+												<Label text="将[F6]映射为" font="3" />
+												<Label width="5" />
+												<Edit name="edit_f6map" maxchar="1" />
+												<Label />
+											</HorizontalLayout>
+											
+											<Control height="8" />
+											
+											<!--F7 map-->
+											<HorizontalLayout height="20" >
+												<Label text="将[F7]映射为" font="3" />
+												<Label width="5" />
+												<Edit name="edit_f7map" maxchar="1" />
+												<Label />
+											</HorizontalLayout>
+											
+											<Control height="8" />
+											
+											<!--F8 map-->
+											<HorizontalLayout height="20" >
+												<Label text="将[F8]映射为" font="3" />
+												<Label width="5" />
+												<Edit name="edit_f8map" maxchar="1" />
+												<Label />
+											</HorizontalLayout>
+											
+											<Control height="8" />
+											
+											<!--F9 map-->
+											<HorizontalLayout height="20" >
+												<Label text="将[F9]映射为" font="3" />
+												<Label width="5" />
+												<Edit name="edit_f9map" maxchar="1" />
+												<Label />
+											</HorizontalLayout>
+											
+											<Control height="8" />
+											
+											<!--F10 map-->
+											<HorizontalLayout height="20" >
+												<Label text="将[F10]映射为" font="3" />
+												<Label width="5" />
+												<Edit name="edit_f10map" maxchar="1" />
+												<Label />
+											</HorizontalLayout>
+											
+											<Control height="8" />
+											
+											<!--F11 map-->
+											<HorizontalLayout height="20" >
+												<Label text="将[F11]映射为" font="3" />
+												<Label width="5" />
+												<Edit name="edit_f11map" maxchar="1" />
+												<Label />
+											</HorizontalLayout>
+											
+											<Control height="8" />
+											
+											<!--背包 map-->
+											<HorizontalLayout height="20" >
+												<Label text="将背包[B]映射为" font="3" />
+												<Label width="5" />
+												<Edit name="edit_bmap" maxchar="1" />
+												<Label />
+											</HorizontalLayout>
+											
+											<Control height="8" />
+											
+											<!--任务 map-->
+											<HorizontalLayout height="20" >
+												<Label text="将任务[Q]映射为" font="3" />
+												<Label width="5" />
+												<Edit name="edit_qmap" maxchar="1" />
+												<Label />
+											</HorizontalLayout>
+											
+											<Control height="8" />
+											
+											<!--人物 map-->
+											<HorizontalLayout height="20" >
+												<Label text="将人物[C]映射为" font="3" />
+												<Label width="5" />
+												<Edit name="edit_cmap" maxchar="1" />
+												<Label />
+											</HorizontalLayout>
+											
+											
+											<Control height="12" />
+											
+											<HorizontalLayout height="30">
+												<Label />
+												<Button name="button_tabok_1" font="3" width="120" text="应用设置" normalimage="file='AssistPane/button.png' source='0,0,177,52' corner='8,8,8,8'" hotimage="file='AssistPane/button.png' source='0,52,177,104' corner='8,8,8,8'" pushedimage="file='AssistPane/button.png' source='0,104,177,156' corner='8,8,8,8'" selectedimage="file='AssistPane/button.png' source='0,104,177,156' corner='8,8,8,8'" />
+												<Label />
+											</HorizontalLayout>
+											
+											<!--map end-->
 										</VerticalLayout>
+										
+										<!--人物状态-->
+										<!--VerticalLayout>
+											<Label text="人物附加属性" font="3" />
+											<Control height="5" />
+										</VerticalLayout-->
 										
 									</TabLayout>
 									

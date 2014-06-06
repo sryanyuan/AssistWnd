@@ -10,6 +10,11 @@ using std::stringstream;
 //////////////////////////////////////////////////////////////////////////
 static const int s_nMaxTabButtons = 5;
 //////////////////////////////////////////////////////////////////////////
+int TranslateKey(int _nKey)
+{
+	return 0;
+}
+//////////////////////////////////////////////////////////////////////////
 AssistPaneWnd::AssistPaneWnd()
 {
 	m_hParentHWND = NULL;
@@ -120,6 +125,11 @@ void AssistPaneWnd::ProcessPageOK(DuiLib::TNotifyUI& msg)
 		{
 			ApplyItemVisible();
 		}break;
+		//	key map
+	case 1:
+		{
+			ApplyKeyMap();
+		}break;
 	}
 }
 
@@ -136,12 +146,57 @@ void AssistPaneWnd::ApplyItemVisible()
 	CDuiString xEditContent = pEdit->GetText();
 
 	string xContent = xEditContent;
-	int nLines = std::count(xContent.begin(), xContent.end(), '\n');
+	std::list<string> xStrItems;
 
-	if(nLines > 0)
+	StringSplit(xContent, "\r\n", xStrItems);
+
+	if(!xStrItems.empty())
 	{
-		char** pSplitStr = new char*[nLines];
-		ZeroMemory(pSplitStr, sizeof(char*) * nLines);
+		std::list<string>::iterator begIter = xStrItems.begin();
+		std::list<string>::const_iterator endIter = xStrItems.end();
+
+		for(begIter;
+			begIter != endIter;
+			++begIter)
+		{
+			string& refItem = *begIter;
+
+			if(!refItem.empty())
+			{
+				m_xItemVisibleSet.insert(refItem);
+			}
+		}
+	}
+}
+
+void AssistPaneWnd::ApplyKeyMap()
+{
+	//	F1-F11
+	char szEditName[32] = {0};
+	m_xKeyMap.clear();
+
+	for(int i = 1; i <= 11; ++i)
+	{
+		sprintf(szEditName, "edit_f%dmap", i);
+
+		CEditUI* pEdit = (CEditUI*)m_PaintManager.FindControl(szEditName)->GetInterface(DUI_CTR_EDIT);
+
+		if(pEdit)
+		{
+			string xInput = pEdit->GetText();
+
+			if(xInput.length() == 1 &&
+				(isdigit(xInput[0]) || isalpha(xInput[0])))
+			{
+				int nTranslateKey = TranslateKey(xInput[0]);
+
+				if(nTranslateKey > 0)
+				{
+					int nMappedKey = 0 + (i - 1);
+					m_xKeyMap.insert(std::make_pair(nMappedKey, nTranslateKey));
+				}
+			}
+		}
 	}
 }
 
